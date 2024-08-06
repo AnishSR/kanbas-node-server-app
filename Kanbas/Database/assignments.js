@@ -1,0 +1,31 @@
+export default [
+    { "_id": "A101", "title": "Propulsion Assignment", "course": "RS101" , "dueDate": "May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25"  },
+    { "_id": "A102", "title": "Combustion Analysis", "course": "RS101", "dueDate": "May 21 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A103", "title": "Nozzle Design Project", "course": "RS101" , "dueDate":"May 21 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A201", "title": "Aerodynamics Quiz", "course": "RS102" , "dueDate":"May 19 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A202", "title": "Flow Analysis", "course": "RS102", "dueDate":"May 24 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A203", "title": "Heating Analysis", "course": "RS102", "dueDate":"May 22 2024 11:59 PM", "description": "Complete the assignment." , "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A301", "title": "Structural Design Task", "course": "RS103", "dueDate":"May 23 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A302", "title": "Orbital Calculations", "course": "RS103", "dueDate":"May 22 2024 11:59 PM", "description": "Complete the assignment." , "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A303", "title": "Systems Engineering Exam", "course": "RS103" , "dueDate":"May 21 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+
+    { "_id": "A401", "title": "Systems Engineering Exam", "course": "RS104" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A501", "title": "Systems Engineering Exam", "course": "RS105" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A601", "title": "Systems Engineering Exam", "course": "RS106" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A701", "title": "Systems Engineering Exam", "course": "RS107" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A801", "title": "Systems Engineering Exam", "course": "RS108" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A901", "title": "Systems Engineering Exam", "course": "RS109" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1001", "title": "Systems Engineering Exam", "course": "RS110" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1101", "title": "Systems Engineering Exam", "course": "RS111" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1201", "title": "Systems Engineering Exam", "course": "RS112" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1301", "title": "Systems Engineering Exam", "course": "RS113" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1401", "title": "Systems Engineering Exam", "course": "RS114" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1501", "title": "Systems Engineering Exam", "course": "RS115" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1601", "title": "Systems Engineering Exam", "course": "RS116" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1701", "title": "Systems Engineering Exam", "course": "RS117" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1801", "title": "Systems Engineering Exam", "course": "RS118" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A1901", "title": "Systems Engineering Exam", "course": "RS119" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A2001", "title": "Systems Engineering Exam", "course": "RS120" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" },
+    { "_id": "A2101", "title": "Systems Engineering Exam", "course": "RS121" , "dueDate":"May 20 2024 11:59 PM", "description": "Complete the assignment.", "points": 100, "from": "2024-05-15", "until": "2024-05-25" }
+    
+  ]
