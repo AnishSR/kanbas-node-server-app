@@ -1,3 +1,29 @@
+/*import db from "../Database/index.js";
+import * as dao from "./dao.js";
+export default function ModuleRoutes(app) {
+
+    app.put("/api/modules/:mid", async (req, res) => {
+      const { mid } = req.params;
+      const module = req.body;
+      res.send(await dao.updateModule(mid, module));
+    });
+
+    app.delete("/api/modules/:mid", async (req, res) => {
+      const { mid } = req.params;
+      res.json(await dao.deleteModule(mid));
+    });
+
+    app.post("/api/courses/:cid/modules", async (req, res) => {
+        const { cid } = req.params;
+        res.json(await dao.createModule({ ...req.body, course: cid }));
+      });
+    
+    app.get("/api/courses/:cid/modules", async (req, res) => {
+        const { cid } = req.params;
+        res.json(await dao.findModulesByCourse(cid));
+    });
+}
+*/
 import db from "../Database/index.js";
 export default function ModuleRoutes(app) {
 
