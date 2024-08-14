@@ -1,13 +1,22 @@
 import model from "./model.js";
+import mongoose from 'mongoose';
 
 export const createModule = (module) => {
     return model.create(module);
 }  
 
-export const findAllModules = () => model.find();
-export const findModuleById = (moduleId) => model.findOne({_id: moduleId});
+export const findAllModules = () => {return model.find();}
+export const findModuleById = (moduleId) => {return model.findOne({_id: moduleId});}
 
 
-export const updateModule = (moduleId, module) =>  model.updateOne({ _id: moduleId }, { $set: module });
-export const deleteModule = (moduleId) => model.deleteOne({ _id: moduleId });
-export const findModulesByCourse = (courseId) => model.find({course: courseId});
+export const updateModule = (moduleId, module) => {
+    const result = model.updateOne({ _id: moduleId }, { $set: module });
+    return result;
+};
+export const deleteModule = async (moduleId) => {
+    return model.deleteOne({ _id: moduleId });
+    
+
+};
+export const findModulesByCourse = (courseId) =>{return model.find({course: courseId});}
+

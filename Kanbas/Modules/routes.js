@@ -1,4 +1,4 @@
-/*import db from "../Database/index.js";
+import db from "../Database/index.js";
 import * as dao from "./dao.js";
 export default function ModuleRoutes(app) {
 
@@ -23,7 +23,8 @@ export default function ModuleRoutes(app) {
         res.json(await dao.findModulesByCourse(cid));
     });
 }
-*/
+
+/*
 import db from "../Database/index.js";
 export default function ModuleRoutes(app) {
 
@@ -61,3 +62,4 @@ export default function ModuleRoutes(app) {
         res.json(modules);
     });
 }
+*/
