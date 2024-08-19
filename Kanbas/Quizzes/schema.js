@@ -19,15 +19,20 @@ const QuestionSchema = new mongoose.Schema({
     type: { type: String, enum: ['multiple-choice', 'true-false', 'fill-in-the-blank'], required: true },
     questionText: { type: String, required: true },
     points: { type: Number, required: true },
-    choices: [OptionSchema],  // Options for multiple-choice questions
-    isTrue: { type: Boolean }, // True/False questions
-    correctAnswers: [FillInTheBlankAnswerSchema],  // Correct answers for fill-in-the-blank questions
+    choices: [OptionSchema],  
+    isTrue: { type: Boolean }, 
+    correctAnswers: [FillInTheBlankAnswerSchema],  
 });
 
 const ScoreSchema = new mongoose.Schema({
     studentId: { type: String, required: true },
-    
-    score: { type: Number, required: true }
+    score: { type: Number, required: true },
+    answers: [{
+        questionId: { type: String, required: true },
+        answer: { type: mongoose.Schema.Types.Mixed, required: true },  
+        isCorrect: { type: Boolean } 
+    }],
+    submittedAt: { type: Date, default: Date.now }
 });
 // Main Quiz schema
 const QuizSchema = new mongoose.Schema({
@@ -37,7 +42,7 @@ const QuizSchema = new mongoose.Schema({
     assignmentGroup: { type: String, enum: ['Quizzes', 'Exams', 'Assignments', 'Project'], required: true },
     shuffleAnswers: { type: Boolean, default: false },
     timeLimit: { type: Boolean, default: false },
-    timeLimitEntry: { type: Number, default: 0 },  // Time limit in minutes
+    timeLimitEntry: { type: Number, default: 0 }, 
     allowMultipleAttempts: { type: Boolean, default: false },
     attemptLimit: { type: Number, default: 1 },
     showCorrectedAnswers: { type: Boolean, default: false },
@@ -52,7 +57,7 @@ const QuizSchema = new mongoose.Schema({
     availableFrom: { type: Date, required: true },
     availableUntil: { type: Date, required: true },
     published: { type: Boolean, default: false },
-    questions: [QuestionSchema],  // Array of questions
+    questions: [QuestionSchema],  
     scores: [ScoreSchema]
 }, { collection: "quizzes" });
 

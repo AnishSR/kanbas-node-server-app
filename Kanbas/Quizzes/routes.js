@@ -79,11 +79,13 @@ export default function QuizRoutes(app) {
     app.post("/api/quizzes/:quizId/questions", async (req, res) => {
         const { quizId } = req.params;
         const questionData = req.body;
-
+    
         try {
             const updatedQuiz = await dao.addQuestionToQuiz(quizId, questionData);
-            res.status(201).json(updatedQuiz);
+            const newQuestion = updatedQuiz.questions[updatedQuiz.questions.length - 1]; 
+            res.status(201).json(newQuestion); 
         } catch (error) {
+            console.error('Error adding question:', error);
             res.status(400).json({ message: error.message });
         }
     });
@@ -92,11 +94,16 @@ export default function QuizRoutes(app) {
     app.put("/api/quizzes/:quizId/questions/:questionId", async (req, res) => {
         const { quizId, questionId } = req.params;
         const updatedQuestion = req.body;
-
+    
         try {
             const updatedQuiz = await dao.updateQuestionInQuiz(quizId, questionId, updatedQuestion);
-            res.status(200).json(updatedQuiz);
+            const updatedQuestionData = updatedQuiz.questions.find(q => q._id.toString() === questionId);
+            if (!updatedQuestionData) {
+                return res.status(404).json({ message: 'Question not found' });
+            }
+            res.status(200).json(updatedQuestionData); 
         } catch (error) {
+            console.error("Error updating question:", error);
             res.status(400).json({ message: error.message });
         }
     });
@@ -112,4 +119,37 @@ export default function QuizRoutes(app) {
             res.status(400).json({ message: error.message });
         }
     });
+
+  // Save user answers (students and faculty)
+  app.post("/api/quizzes/:quizId/answers", async (req, res) => {
+    const { quizId } = req.params;
+    const { userId, answers } = req.body;
+
+    if (!userId || !answers || typeof answers !== 'object') {
+        return res.status(400).json({ message: "Invalid request data" });
+    }
+
+    try {
+        const savedAnswers = await dao.saveUserAnswers(quizId, userId, answers);
+        res.status(200).json(savedAnswers);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
+// Get user answers (students and faculty)
+app.get("/api/quizzes/:quizId/answers/:userId", async (req, res) => {
+    const { quizId, userId } = req.params;
+
+    try {
+        const answers = await dao.getUserAnswers(quizId, userId);
+        if (!answers) {
+            return res.status(404).json({ message: 'No answers found for this user' });
+        }
+        res.status(200).json(answers);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
 }
