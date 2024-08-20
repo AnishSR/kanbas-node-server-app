@@ -32,7 +32,8 @@ const ScoreSchema = new mongoose.Schema({
         answer: { type: mongoose.Schema.Types.Mixed, required: true },  
         isCorrect: { type: Boolean } 
     }],
-    submittedAt: { type: Date, default: Date.now }
+    submittedAt: { type: Date, default: Date.now },
+    userAttempts: { type: Number, default: 0 }
 });
 // Main Quiz schema
 const QuizSchema = new mongoose.Schema({

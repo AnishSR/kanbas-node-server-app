@@ -75,7 +75,7 @@ export const findUserAnswersByQuiz = async (quizId, userId) => {
 };
 
 export const saveUserAnswers = async (quizId, userId, answers) => {
-    console.log("Received answers:", answers);
+    //console.log("Received answers:", answers);
     let score = 0;
 
     const quiz = await QuizModel.findById(quizId);
@@ -120,8 +120,10 @@ export const saveUserAnswers = async (quizId, userId, answers) => {
                     "scores.$.answers": answers, 
                     "scores.$.score": score, 
                     "scores.$.submittedAt": new Date() 
-                } 
+                },
+                $inc: { "scores.$.userAttempts": 1 } 
             },
+            
             { new: true }
         );
     } else {
@@ -129,7 +131,8 @@ export const saveUserAnswers = async (quizId, userId, answers) => {
             studentId: userId,
             score: score,
             answers: answers,
-            submittedAt: new Date()
+            submittedAt: new Date(),
+            userAttempts: 1
         };
         await QuizModel.findByIdAndUpdate(
             quizId,
